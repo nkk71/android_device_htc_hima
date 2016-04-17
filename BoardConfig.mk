@@ -90,3 +90,45 @@ TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
 TARGET_UNIFIED_DEVICE := true
 TARGET_INIT_VENDOR_LIB := libinit_msm
 TARGET_LIBINIT_DEFINES_FILE := device/htc/hima/init/init_hima.c
+
+
+##==================================
+##  RECOVERY_VARIANT := multirom
+TARGET_RECOVERY_IS_MULTIROM := true
+
+MR_DEVICE_SPECIFIC_VERSION := b
+
+include device/common/version-info/MR_REC_VERSION.mk
+
+ifeq ($(MR_REC_VERSION),)
+MR_REC_VERSION := $(shell date -u +%Y%m%d)-01
+endif
+
+BOARD_MKBOOTIMG_ARGS += --board mrom$(MR_REC_VERSION)
+
+#still needed by multirom boot menu
+DEVICE_RESOLUTION := 1080x1920
+MR_PIXEL_FORMAT := "RGBA_8888"
+RECOVERY_GRAPHICS_USE_LINELENGTH := true
+
+MR_DEV_BLOCK_BOOTDEVICE := true
+MR_ALLOW_NKK71_NOKEXEC_WORKAROUND := true
+
+# MultiROM config
+MR_DEVICE_VARIANTS := himaul htc_himaul         #HTC One M9 - GSM
+MR_DEVICE_VARIANTS += himauhl htc_himauhl       #HTC One M9 - GSM
+MR_DEVICE_VARIANTS += himamhl htc_himawhl       #HTC One M9 - Sprint
+MR_DEVICE_VARIANTS += himawl htc_himawl         #HTC One M9 - Verizon M8
+MR_INPUT_TYPE := type_b
+MR_INIT_DEVICES := device/htc/hima/multirom/mr_init_devices.c
+MR_DPI := xhdpi
+MR_DPI_FONT := 340
+MR_DEVICE_HOOKS := device/htc/hima/multirom/mr_hooks.c
+MR_DEVICE_HOOKS_VER := 4
+MR_FSTAB := device/htc/hima/recovery.fstab
+MR_USE_MROM_FSTAB := true
+#not just yet :(
+MR_KEXEC_MEM_MIN := 0x03200000
+MR_KEXEC_DTB := true
+###MR_ENCRYPTION := true
+###MR_ENCRYPTION_SETUP_SCRIPT := device/htc/hima/multirom/mr_cp_crypto.sh
