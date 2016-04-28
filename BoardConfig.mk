@@ -134,4 +134,3 @@ MR_KEXEC_MEM_MIN := 0x03200000
 MR_KEXEC_DTB := true
 ##MR_ENCRYPTION := true
 ###MR_ENCRYPTION_SETUP_SCRIPT := device/htc/hima/multirom/mr_cp_crypto.sh
->>>>>>> ba81eb0... Update tree for MultiROM
