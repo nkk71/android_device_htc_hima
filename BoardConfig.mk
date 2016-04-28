@@ -73,7 +73,10 @@ BOARD_RECOVERY_SWIPE := true
 BOARD_SUPPRESS_SECURE_ERASE := true
 BOARD_USES_MMCUTILS := true
 TARGET_PREBUILT_KERNEL := device/htc/hima/recovery/kernel
-TARGET_RECOVERY_DEVICE_MODULES := chargeled
+TARGET_RECOVERY_DEVICE_MODULES := chargeled twrpdec
+TW_RECOVERY_ADDITIONAL_RELINK_FILES := $(OUT)/recovery/root/sbin/twrpdec
+TARGET_USES_LOGD := true
+TWRP_INCLUDE_LOGCAT := true
 
 # TWRP Build Flags
 TW_THEME := portrait_hdpi
@@ -87,4 +90,4 @@ TW_NO_SCREEN_BLANK := true
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
 TARGET_UNIFIED_DEVICE := true
 TARGET_INIT_VENDOR_LIB := libinit_msm
-TARGET_LIBINIT_DEFINES_FILE := device/htc/hima/init/init_hima.cpp
+TARGET_LIBINIT_DEFINES_FILE := device/htc/hima/recovery/init/init_hima.cpp
