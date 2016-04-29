@@ -57,7 +57,7 @@ const char *mr_init_devices[] =
     "/sys/devices/platform/android_usb/usb_function_switch",
     "/sys/bus/usb",
 	
-	"/sys/devices/soc.0/f9924000.i2c/i2c-2/2-0020/input*",
+    "/sys/devices/soc.0/f9924000.i2c/i2c-2/2-0020/input*",
 
     "/sys/devices/soc.0/f9200000.ssusb/f9200000.dwc3/xhci-hcd*",
     "/sys/devices/platform/xhci-hcd*",
