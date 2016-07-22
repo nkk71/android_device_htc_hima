@@ -82,7 +82,8 @@ TW_HAS_DOWNLOAD_MODE := true
 TW_INCLUDE_CRYPTO := true
 TW_NO_EXFAT_FUSE := true
 TW_NO_SCREEN_BLANK := true
-TARGET_RECOVERY_DEVICE_MODULES := chargeled # twrpdec
+TARGET_RECOVERY_DEVICE_MODULES := chargeled
+#TARGET_RECOVERY_DEVICE_MODULES += twrpdec
 #TW_RECOVERY_ADDITIONAL_RELINK_FILES := $(OUT)/recovery/root/sbin/twrpdec
 #TWRP_INCLUDE_LOGCAT := true
 
@@ -97,7 +98,7 @@ TARGET_LIBINIT_DEFINES_FILE := device/htc/hima/recovery/init/init_hima.cpp
 ##  RECOVERY_VARIANT := multirom
 TARGET_RECOVERY_IS_MULTIROM := true
 
-MR_DEVICE_SPECIFIC_VERSION := c
+MR_DEVICE_SPECIFIC_VERSION := d
 
 include device/common/version-info/MR_REC_VERSION.mk
 
@@ -129,8 +130,9 @@ MR_DEVICE_HOOKS := device/htc/hima/multirom/mr_hooks.c
 MR_DEVICE_HOOKS_VER := 4
 MR_FSTAB := device/htc/hima/recovery.fstab
 MR_USE_MROM_FSTAB := true
+
 #not just yet :(
 MR_KEXEC_MEM_MIN := 0x03200000
 MR_KEXEC_DTB := true
-##MR_ENCRYPTION := true
+###MR_ENCRYPTION := true
 ###MR_ENCRYPTION_SETUP_SCRIPT := device/htc/hima/multirom/mr_cp_crypto.sh
