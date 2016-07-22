@@ -18,6 +18,7 @@ const char *mr_init_devices[] =
     "/sys/devices/soc.0/f9824900.sdhci/mmc_host/mmc0/mmc0:0001",
     "/sys/devices/soc.0/f9824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0",
     "/sys/devices/soc.0/f9824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p30", //persist
+    "/sys/devices/soc.0/f9824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p32", //misc         ... needed for MultiROM menu reboot to recovery/bootloader
     "/sys/devices/soc.0/f9824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p35", //fataldevlog
     "/sys/devices/soc.0/f9824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p36", //devlog
     "/sys/devices/soc.0/f9824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p39", //extra
@@ -50,14 +51,13 @@ const char *mr_init_devices[] =
     "/sys/devices/soc.0/gpio_keys.87/input*",
     "/sys/devices/virtual/input*",
     "/sys/devices/virtual/misc/uinput",
+    "/sys/devices/soc.0/f9924000.i2c/i2c-2/2-0020/input*",
 
     "/sys/devices/virtual/tty/ptmx",
     "/sys/devices/virtual/misc/android_adb",
     "/sys/devices/virtual/android_usb/android0/f_adb",
     "/sys/devices/platform/android_usb/usb_function_switch",
     "/sys/bus/usb",
-	
-    "/sys/devices/soc.0/f9924000.i2c/i2c-2/2-0020/input*",
 
     "/sys/devices/soc.0/f9200000.ssusb/f9200000.dwc3/xhci-hcd*",
     "/sys/devices/platform/xhci-hcd*",
