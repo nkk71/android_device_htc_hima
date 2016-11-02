@@ -98,7 +98,7 @@ TARGET_LIBINIT_DEFINES_FILE := device/htc/hima/recovery/init/init_hima.cpp
 ##  RECOVERY_VARIANT := multirom
 TARGET_RECOVERY_IS_MULTIROM := true
 
-MR_DEVICE_SPECIFIC_VERSION := d
+#MR_DEVICE_SPECIFIC_VERSION := e ... let the build script deal with this!
 
 include device/common/version-info/MR_REC_VERSION.mk
 
@@ -115,7 +115,7 @@ RECOVERY_GRAPHICS_USE_LINELENGTH := true
 TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
 
 MR_DEV_BLOCK_BOOTDEVICE := true
-MR_ALLOW_NKK71_NOKEXEC_WORKAROUND := true
+MR_NO_KEXEC := enabled
 
 # MultiROM config
 MR_DEVICE_VARIANTS := himaul htc_himaul         #HTC One M9 - GSM
@@ -128,11 +128,12 @@ MR_DPI := xhdpi
 MR_DPI_FONT := 340
 MR_DEVICE_HOOKS := device/htc/hima/multirom/mr_hooks.c
 MR_DEVICE_HOOKS_VER := 4
-MR_FSTAB := device/htc/hima/recovery.fstab
+MR_FSTAB := device/htc/hima/multirom/mrom.fstab
 MR_USE_MROM_FSTAB := true
 
 #not just yet :(
 MR_KEXEC_MEM_MIN := 0x03200000
+
 MR_KEXEC_DTB := true
 ###MR_ENCRYPTION := true
 ###MR_ENCRYPTION_SETUP_SCRIPT := device/htc/hima/multirom/mr_cp_crypto.sh
